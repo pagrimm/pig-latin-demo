@@ -4,9 +4,15 @@ button {
 
 code {
   display:block;
+  height:100%;
+  overflow-x: 0;
 }
 
 pre {
   background-color: #282c34;
   margin-bottom:0;
+}
+
+.hljs {
+  overflow-x: initial;
 }
