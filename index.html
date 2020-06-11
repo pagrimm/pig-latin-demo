@@ -55,7 +55,7 @@ $(document).ready(function() {
     if (regex.test(getInputSentence() === true) && getInputSentence().length < 300) {
       $("#output").text(outputSentence);
     } else {
-      $("#output").text("Please enter a string with no numbers, symbols, or punction. 300 character limit.")
+      $("#output").text("Please enter a string with no numbers, symbols, or punctuation. 300 character limit.")
     }
   });
 });
@@ -130,7 +130,7 @@ $(document).ready(function() {
     if (/^[a-zA-Z][a-zA-Z\s]*$/.test($("#input2").val()) === true && $("#input2").val().length < 300) {
       $("#output").text($("#input2").val().split(" ").map(word => makeWordPigLatinB(word)).join(" "));
     } else {
-      $("#output").text("Please enter a string with no numbers, symbols, or punction. 300 character limit.")
+      $("#output").text("Please enter a string with no numbers, symbols, or punctuation. 300 character limit.")
     }
   });
 });
