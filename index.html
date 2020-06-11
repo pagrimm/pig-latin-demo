@@ -82,7 +82,7 @@ function findCutPosition (inputWord) {
   for (i = 0; i < inputWord.length; i++) {    
     if (checkForVowels(inputWord.charAt(i)) === true) {     //checks if each letter is a vowel
       cutPosition = i;      //when it finds a vowel, add that index value as the cut position
-      if (inputWord.charAt(cutPosition) === "u" && inputWord.charAt(cutPosition - 1) === "q") {    //if the vowel is u, checks if it has a q before it, if so it adds 1 to the cut position so that both the q and u will be cut
+      if (inputWord.charAt(cutPosition).toLowerCase() === "u" && inputWord.charAt(cutPosition - 1).toLowerCase() === "q") {    //if the vowel is u, checks if it has a q before it, if so it adds 1 to the cut position so that both the q and u will be cut
         cutPosition ++;
       }
       return cutPosition;
@@ -141,7 +141,7 @@ function makeWordPigLatinB (inputWord) {
     if (vowels.indexOf(inputWord.charAt(i).toLowerCase()) !== -1) {
       break;
       }
-    if (inputWord.slice(i, i + 2) === "qu") { 
+    if (inputWord.slice(i, i + 2).toLowerCase() === "qu") { 
       i++;
       }
   }
@@ -151,7 +151,6 @@ function makeWordPigLatinB (inputWord) {
     return inputWord.slice(i) + inputWord.slice(0, i) + "ay";
   }
 }
-              
             </code>
           </pre>
     </section>
