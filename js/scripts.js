@@ -31,7 +31,7 @@ function findCutPosition (inputWord) {
   for (i = 0; i < inputWord.length; i++) {    
     if (checkForVowels(inputWord.charAt(i)) === true) {     //checks if each letter is a vowel
       cutPosition = i;      //when it finds a vowel, add that index value as the cut position
-      if ((inputWord.charAt(cutPosition) === "u") && (inputWord.charAt(cutPosition - 1) === "q")) {    //if the vowel is u, checks if it has a q before it, if so it adds 1 to the cut position so that both the q and u will be cut
+      if (inputWord.charAt(cutPosition) === "u" && inputWord.charAt(cutPosition - 1) === "q") {    //if the vowel is u, checks if it has a q before it, if so it adds 1 to the cut position so that both the q and u will be cut
         cutPosition ++;
       }
       return cutPosition;
@@ -70,24 +70,18 @@ function makeWordPigLatin (inputWord, cutPosition) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//LOGIC B
+//LOGIC B - As dry as possible
 //USER INPUT LOGIC
 $(document).ready(function() {
   $("#form2").submit(function(event) {
     event.preventDefault();
-      $("#output").text(getInputSentenceB().split(" ").map(word => makeWordPigLatinB(word)).join(" "));
+    $("#output").text($("#input2").val().split(" ").map(word => makeWordPigLatinB(word)).join(" "));
   });
 });
-
-function getInputSentenceB () {
-  let inputSentence = $("#input2").val();
-  return inputSentence;
-}
 
 //BUSINESS LOGIC
 function makeWordPigLatinB (inputWord) {  
   const vowels = ["a", "e", "i", "o", 'u'];
-  let output;
   for (i = 0; i < inputWord.length; i++) {
     if (vowels.indexOf(inputWord.charAt(i)) !== -1) {
       break;
@@ -97,9 +91,8 @@ function makeWordPigLatinB (inputWord) {
       }
   }
   if (i === 0) {
-    output = inputWord + "way" 
+    return inputWord + "way";
   } else {
-  output = inputWord.slice(i) + inputWord.slice(0, i) + "ay";
+    return inputWord.slice(i) + inputWord.slice(0, i) + "ay";
   }
-  return output;
 }
