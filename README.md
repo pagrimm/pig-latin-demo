@@ -18,7 +18,8 @@ A demo that shows two logic sets for generating pig latin.
 HTML  
 CSS  
 Bootstrap 4.5.0  
-jQuery 3.5.1
+jQuery 3.5.1  
+highlight.js 10.0.3
 
 ## Legal
 
