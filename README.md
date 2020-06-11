@@ -1,15 +1,15 @@
-# Project Name
-**for Epicodus**
+# Pig Latin Demo
+**Javascript Activity for Epicodus**
 **By Peter Grimm, 05.29.2020**
 
 ## Description
 
-Insert description here
+A demo that shows two logic sets for generating pig latin.
 
 ## Setup/Installation Requirements
 
 * Clone this repository 
-* Browse to the ` ` folder
+* Browse to the `pig-latin-demo` folder
 * Open `index.html` in a browser of your choice
 
 ## Technologies Used
