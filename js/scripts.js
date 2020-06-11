@@ -5,10 +5,10 @@ $(document).ready(function() {
     event.preventDefault();
     let regex = /^[a-zA-Z][a-zA-Z\s]*$/;      //regex for uppercase and lowercase letters, no numbers, punctuation, or symbols
     let outputSentence = (makeSentencePigLatin(getInputSentence()));
-    if ((regex.test(getInputSentence()) === true) && (getInputSentence().length < 300)) {
+    if (regex.test(getInputSentence() === true) && getInputSentence().length < 300) {
       $("#output").text(outputSentence);
     } else {
-      $("#output").text("Please enter a string with no numbers, symbols, or punction. 300 character limit")
+      $("#output").text("Please enter a string with no numbers, symbols, or punction. 300 character limit.")
     }
   });
 });
@@ -83,7 +83,7 @@ $(document).ready(function() {
     if (/^[a-zA-Z][a-zA-Z\s]*$/.test($("#input2").val()) === true && $("#input2").val().length < 300) {
       $("#output").text($("#input2").val().split(" ").map(word => makeWordPigLatinB(word)).join(" "));
     } else {
-      $("#output").text("Please enter a string with no numbers, symbols, or punction.")
+      $("#output").text("Please enter a string with no numbers, symbols, or punction. 300 character limit.")
     }
   });
 });
