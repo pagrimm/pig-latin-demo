@@ -6,10 +6,6 @@ $(document).ready(function() {
     let outputSentence = (makeSentencePigLatin(getInputSentence()));
     $("#output").text(outputSentence);
   });
-  $("#form2").submit(function(event) {
-    event.preventDefault();
-      $("#input").text(getInputSentenceB().split(" ").map(word => makeWordPigLatinB(word)).join(" "));
-  });
 });
 
 //this function gets the input sentence from the field
