@@ -3,8 +3,13 @@
 $(document).ready(function() {
   $("#form1").submit(function(event) {
     event.preventDefault();
+    let regex = /^[a-zA-Z][a-zA-Z\s]*$/;      //regex for uppercase and lowercase letters, no numbers, punctuation, or symbols
     let outputSentence = (makeSentencePigLatin(getInputSentence()));
-    $("#output").text(outputSentence);
+    if (regex.test(getInputSentence()) === true) {
+      $("#output").text(outputSentence);
+    } else {
+      $("#output").text("Please enter a string with no numbers, symbols, or punction.")
+    }
   });
 });
 
@@ -75,7 +80,11 @@ function makeWordPigLatin (inputWord, cutPosition) {
 $(document).ready(function() {
   $("#form2").submit(function(event) {
     event.preventDefault();
-    $("#output").text($("#input2").val().split(" ").map(word => makeWordPigLatinB(word)).join(" "));
+    if (/^[a-zA-Z][a-zA-Z\s]*$/.test($("#input2").val()) === true) {
+      $("#output").text($("#input2").val().split(" ").map(word => makeWordPigLatinB(word)).join(" "));
+    } else {
+      $("#output").text("Please enter a string with no numbers, symbols, or punction.")
+    }
   });
 });
 
@@ -83,7 +92,7 @@ $(document).ready(function() {
 function makeWordPigLatinB (inputWord) {  
   const vowels = ["a", "e", "i", "o", 'u'];
   for (i = 0; i < inputWord.length; i++) {
-    if (vowels.indexOf(inputWord.charAt(i)) !== -1) {
+    if (vowels.indexOf(inputWord.charAt(i).toLowerCase()) !== -1) {
       break;
       }
     if (inputWord.slice(i, i + 2) === "qu") { 
