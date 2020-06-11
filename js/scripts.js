@@ -5,7 +5,7 @@ $(document).ready(function() {
     event.preventDefault();
     let regex = /^[a-zA-Z][a-zA-Z\s]*$/;      //regex for uppercase and lowercase letters, no numbers, punctuation, or symbols
     let outputSentence = (makeSentencePigLatin(getInputSentence()));
-    if (regex.test(getInputSentence() === true) && getInputSentence().length < 300) {
+    if (regex.test(getInputSentence()) === true && getInputSentence().length < 300) {
       $("#output").text(outputSentence);
     } else {
       $("#output").text("Please enter a string with no numbers, symbols, or punction. 300 character limit.")
