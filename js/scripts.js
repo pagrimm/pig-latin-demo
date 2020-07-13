@@ -33,7 +33,7 @@ function makeSentencePigLatin (inputSentence) {
 //this function finds where the first vowel occurs in an input word, and sets that to the cut position for later manipulation
 function findCutPosition (inputWord) {
   let cutPosition;
-  for (i = 0; i < inputWord.length; i++) {    
+  for (let i = 0; i < inputWord.length; i++) {    
     if (checkForVowels(inputWord.charAt(i)) === true) {     //checks if each letter is a vowel
       cutPosition = i;      //when it finds a vowel, add that index value as the cut position
       if (inputWord.charAt(cutPosition).toLowerCase() === "u" && inputWord.charAt(cutPosition - 1).toLowerCase() === "q") {    //if the vowel is u, checks if it has a q before it, if so it adds 1 to the cut position so that both the q and u will be cut
@@ -48,7 +48,7 @@ function findCutPosition (inputWord) {
 function checkForVowels (inputCharacter) {
   const vowels = ["a", "e", "i", "o", "u",]
   let isVowel;
-  for (v = 0; v < vowels.length; v++) {    //checks each vowel against the input character, returns true or false, since this is called in another for loop, the index variable cant be the same
+  for (let v = 0; v < vowels.length; v++) {    //checks each vowel against the input character, returns true or false, since this is called in another for loop, the index variable cant be the same
     if (vowels[v] === inputCharacter.toLowerCase()) {     //compares against the toLowerCase of the input character to prevent any issues with capitalization
       isVowel = true;
       break;
@@ -91,7 +91,7 @@ $(document).ready(function() {
 //BUSINESS LOGIC
 function makeWordPigLatinB (inputWord) {  
   const vowels = ["a", "e", "i", "o", 'u'];
-  for (i = 0; i < inputWord.length; i++) {
+  for (let i = 0; i < inputWord.length; i++) {
     if (vowels.indexOf(inputWord.charAt(i).toLowerCase()) !== -1) {
       break;
       }
